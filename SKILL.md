@@ -26,7 +26,7 @@ pip install requests cryptography rich typer
 A shell alias is configured in `~/.bashrc`:
 
 ```bash
-alias kalshi="~/.openclaw/workspace/skills/kalshi-agent/.venv/bin/python3 ~/.openclaw/workspace/skills/kalshi-agent/cli.py"
+alias kalshi="~/.openclaw/workspace/skills/kalshi-cli/.venv/bin/python3 ~/.openclaw/workspace/skills/kalshi-cli/cli.py"
 ```
 
 ## Configuration
