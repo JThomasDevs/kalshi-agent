@@ -20,13 +20,7 @@ CLI tool for trading prediction markets on [Kalshi](https://kalshi.com).
 ## Installation
 
 ```bash
-pip install requests cryptography rich typer
-```
-
-A shell alias is configured in `~/.bashrc`:
-
-```bash
-alias kalshi="~/.openclaw/workspace/skills/kalshi-cli/.venv/bin/python3 ~/.openclaw/workspace/skills/kalshi-cli/cli.py"
+npm install -g kalshi-cli
 ```
 
 ## Configuration
@@ -142,27 +136,6 @@ kalshi cancel <order-id>
 - Expiry times are human-readable: "8h 35m", "Fri 04:00PM", "Apr 01", "Jan 01, 2027"
 - Event tickers start with `KX` (e.g. `KXWO-GOLD-26`); market tickers have more segments (e.g. `KXWO-GOLD-26-NOR`)
 - Market tables show outcome names (e.g. "Norway" instead of raw tickers) when available
-
----
-
-## Workflow: Research on Polymarket, Trade on Kalshi
-
-**Step 1**: Analyze market sentiment on Polymarket
-```bash
-cd ~/.openclaw/workspace/skills/polymarket-agent
-source .envrc
-.venv/bin/python analyze.py "Super Bowl"
-```
-
-**Step 2**: Find the same market on Kalshi
-```bash
-kalshi search "Super Bowl"
-```
-
-**Step 3**: Execute trade on Kalshi
-```bash
-kalshi buy KXSB-26 10 68
-```
 
 ---
 

@@ -15,11 +15,7 @@ This skill wraps [**kalshi-cli**](https://github.com/JThomasDevs/kalshi-cli), a 
 ### 1. Install kalshi-cli
 
 ```bash
-git clone https://github.com/JThomasDevs/kalshi-cli.git ~/.openclaw/workspace/skills/kalshi-cli
-cd ~/.openclaw/workspace/skills/kalshi-cli
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+npm install -g kalshi-cli
 ```
 
 ### 2. Configure API credentials
@@ -32,12 +28,6 @@ mkdir -p ~/.kalshi
 echo 'KALSHI_ACCESS_KEY=your_access_key_id' > ~/.kalshi/.env
 ```
 
-### 3. Set up shell alias (optional)
-
-```bash
-alias kalshi="~/.openclaw/workspace/skills/kalshi-cli/.venv/bin/python3 ~/.openclaw/workspace/skills/kalshi-cli/cli.py"
-```
-
 Or run `kalshi setup-shell` to export the access key to your shell config automatically.
 
 ## Quick Start
@@ -45,8 +35,8 @@ Or run `kalshi setup-shell` to export the access key to your shell config automa
 ```bash
 kalshi search soccer          # find soccer markets
 kalshi series -e              # browse series sorted by expiry
-kalshi detail KXSB-26        # market details
-kalshi buy KXSB-26 10 68     # buy 10 YES contracts at 68¢
+kalshi detail KXSB-26         # market details
+kalshi buy KXSB-26 10 68      # buy 10 YES contracts at 68¢
 kalshi balance                # check balance
 ```
 
