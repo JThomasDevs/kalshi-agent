@@ -1,0 +1,20 @@
+{
+  "name": "kalshi-agent",
+  "version": "0.2.0",
+  "description": "OpenClaw skill for Kalshi prediction market trading",
+  "author": "JThomasDevs",
+  "repository": "https://github.com/JThomasDevs/kalshi-agent",
+  "keywords": ["prediction-markets", "kalshi", "trading", "openclaw", "skill"],
+  "requires": {
+    "python": ">=3.10",
+    "repos": ["https://github.com/JThomasDevs/kalshi-cli"]
+  },
+  "dependencies": {
+    "kalshi-cli": "https://github.com/JThomasDevs/kalshi-cli"
+  },
+  "scripts": {
+    "markets": "kalshi markets",
+    "search": "kalshi search",
+    "balance": "kalshi balance"
+  }
+}
