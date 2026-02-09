@@ -169,37 +169,34 @@ kalshi series crypto -e --all
 ```
 
 **Q: How do I get markets from a specific series?**
-A: Use the CLI module directly in Python:
+A: Use `kalshi search <ticker>` for direct lookup, or the CLI module for Python:
 
-```python
+```bash
+# Direct ticker lookup
+kalshi search KXBTC15M
+kalshi search KXBTCD
+kalshi search KXBTC
+
+# Or use Python
 import cli
-
-# Get 15-min BTC markets
 data = cli.api('GET', 'markets?series_ticker=KXBTC15M')
-
-# Get hourly BTC Above/Below
-data = cli.api('GET', 'markets?series_ticker=KXBTCD')
-
-# Get daily BTC Range
-data = cli.api('GET', 'markets?series_ticker=KXBTC')
 ```
 
 ### Common Patterns
 
 | Goal | Command |
 |------|---------|
-| Find 15-min BTC market | `kalshi series btc -e` then enter # for KXBTC15M |
-| Find hourly BTC Above/Below | `kalshi series btc -e` then enter # for KXBTCD |
-| Find daily BTC Range | `kalshi series btc -e` then enter # for KXBTC |
-| Get BTC markets via API | `python -c "import cli; print(cli.api('GET', 'markets?series_ticker=KXBTCD'))"` |
+| Find 15-min BTC market | `kalshi search KXBTC15M` |
+| Find hourly BTC Above/Below | `kalshi search KXBTCD` |
+| Find daily BTC Range | `kalshi search KXBTC` |
+| Find BTC markets via API | `python -c "import cli; print(cli.api('GET', 'markets?series_ticker=KXBTCD'))"` |
 
 ### Trading Workflows
 
 **Quick Trade: 15-min BTC**
 ```bash
 # Step 1: Get 15-min BTC market
-kalshi series btc -e
-# Enter # for KXBTC15M
+kalshi search KXBTC15M
 
 # Step 2: Note the ticker from the results
 
@@ -210,8 +207,7 @@ kalshi buy <ticker> <qty> <price> --force
 **Quick Trade: Hourly BTC**
 ```bash
 # Step 1: Get hourly BTC Above/Below
-kalshi series btc -e
-# Enter # for KXBTCD
+kalshi search KXBTCD
 
 # Step 2: Find price level you want
 
@@ -225,9 +221,9 @@ Markets like `KXBTC15M` (15-min BTC) refresh every 15 minutes. When one expires,
 
 ```bash
 # Check if new 15-min market is available
-kalshi series btc -e
+kalshi search KXBTC15M
 
-# Get 15-min markets directly
+# Or get via API
 python -c "import cli; print(cli.api('GET', 'markets?series_ticker=KXBTC15M'))"
 ```
 
