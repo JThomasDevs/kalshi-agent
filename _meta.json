@@ -6,7 +6,7 @@
   "repository": "https://github.com/JThomasDevs/kalshi-agent",
   "keywords": ["prediction-markets", "kalshi", "trading", "openclaw", "skill"],
   "requires": {
-    "bins": ["npm"]
+    "bins": ["npm", "python3", "pip"]
   },
   "scripts": {
     "markets": "kalshi markets",
