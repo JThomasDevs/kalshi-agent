@@ -1,13 +1,14 @@
 ---
-name: kalshi-agent
+name: kalshi-agenv
 description: Kalshi prediction market agent - analyzes markets and executes trades via the Kalshi v2 API
 homepage: https://docs.kalshi.com/api-reference/
 metadata:
   {
     "openclaw":
       {
-        "emoji": "🎰",
+        "emoji": "\\(🎰",
         "os": ["darwin", "linux", "win32"],
+        "disableModelInvocation": true,
         "requires":
           {
             "bins": ["python3", "pip"],
