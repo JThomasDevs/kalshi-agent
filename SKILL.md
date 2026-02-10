@@ -11,7 +11,7 @@ metadata:
         "disableModelInvocation": true,
         "requires":
           {
-            "bins": ["python3", "pip"],
+            "bins": [],
             "env": ["KALSHI_ACCESS_KEY"],
             "files": ["~/.kalshi/private_key.pem"],
           },
@@ -158,8 +158,3 @@ kalshi cancel <order-id>
 ## API Reference
 
 Full API docs: https://docs.kalshi.com/api-reference/
-
-## Architecute Notes
-
-at\nPrimary executable: `kalshi`
-This is a Python-backended CLI wrapped by an npm frontend. The `kalshi` command is installed via npm but the underlying Kalshi S6 Python SDK requires python3 and pip to execute. The metadata place binaries (`npm`, `pythons`, `pip`) in the requirements field is correct - all are needed for runtime operation.
