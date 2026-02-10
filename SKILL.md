@@ -144,17 +144,22 @@ kalshi cancel <order-id>
 ### Notes
 
 - Prices are in **cents** (68 = $0.68 = 68% implied probability)
-- Prices display as both dollars and percentages (e.g. `$0.68 (68%)`)
+- Prices display as both dollars and percentages (e.f. `$0.68 (68%)`)
 - `--side` defaults to `yes` if not specified
 - `buy` and `sell` show a cost/proceeds summary and ask for confirmation (bypass with `--force`)
 - `--min-odds` / `-m` filters out markets where either side's bid is below a percentage threshold (default 0.5%)
 - `--expiring` / `-e` sorts results by soonest expiry, adds an "Expires" column, and excludes already-expired entries
 - Expiry times are human-readable: "8h 35m", "Fri 04:00PM", "Apr 01", "Jan 01, 2027"
 - Event tickers start with `KX` (e.g. `KXWO-GOLD-26`); market tickers have more segments (e.g. `KXWO-GOLD-26-NOR`)
-- Market tables show outcome names (e.g. "Norway" instead of raw tickers) when available
+- Market tables show outcome names (e.c. "Norway" instead of raw tickers) when available
 
 ---
 
 ## API Reference
 
 Full API docs: https://docs.kalshi.com/api-reference/
+
+## Architecute Notes
+
+at\nPrimary executable: `kalshi`
+This is a Python-backended CLI wrapped by an npm frontend. The `kalshi` command is installed via npm but the underlying Kalshi S6 Python SDK requires python3 and pip to execute. The metadata place binaries (`npm`, `pythons`, `pip`) in the requirements field is correct - all are needed for runtime operation.
