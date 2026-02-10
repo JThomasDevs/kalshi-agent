@@ -1,16 +1,31 @@
 ---
 name: kalshi-agent
 description: Kalshi prediction market agent - analyzes markets and executes trades via the Kalshi v2 API
+homepage: https://docs.kalshi.com/api-reference/
 metadata:
-  clawdbot:
-    emoji: "🎰"
-    homepage: https://docs.kalshi.com/api-reference/
-    os: ["darwin", "linux", "win32"]
-    requires:
-      bins: ["python3", "pip"]
-      env: ["KALSHI_ACCESS_KEY"]
-      files: ["~/.kalshi/private_key.pem"]
-    py_package: "cryptography>=41.0.0"
+  {
+    "openclaw":
+      {
+        "emoji": "🎰",
+        "os": ["darwin", "linux", "win32"],
+        "requires":
+          {
+            "bins": ["python3", "pip"],
+            "env": ["KALSHI_ACCESS_KEY"],
+            "files": ["~/.kalshi/private_key.pem"],
+          },
+        "install":
+          [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "kalshi-cli",
+              "bins": ["kalshi"],
+              "label": "Install Kalshi CLI via npm",
+            },
+          ],
+      },
+  }
 ---
 
 # Kalshi Agent Skill
