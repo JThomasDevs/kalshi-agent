@@ -1,5 +1,5 @@
 ---
-name: kalshi-agenv
+name: kalshi-agent
 description: Kalshi prediction market agent - analyzes markets and executes trades via the Kalshi v2 API
 homepage: https://docs.kalshi.com/api-reference/
 metadata:
